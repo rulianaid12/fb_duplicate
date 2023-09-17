@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1" />
+		<title>Facebook Duplikat</title>
+		
+		<!--google font-->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&family=Roboto:wght@400&display=swap" rel="stylesheet">
+		
+		<!--style css-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+		<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+			font-family: 'Roboto', sans-serif;
+			letter-spacing:-0.4px;
+			box-sizing:border-box;
+		}
+		header {
+			width:100%;
+			max-width:600px;
+			height:37px;
+			position:fixed;
+			background-color:#0C090A;
+			color:#fff;
+			z-index:99;
+		}
+		header #header-data {
+			padding:7.5px 10px;
+			box-sizing:border-box;
+		}
+		header #header-data button {
+			float:right;
+			transform:translateY(-20px);
+			margin-left:10px;
+			padding:3px 7px;
+			box-sizing:border-box;
+			background:transparent;
+			border-color:white;
+			border:none;
+			color:white;
+			font-size:15px;
+			border:1px solid;
+		}
+		#header-data span {
+			border:1.5px solid;
+			padding-right:4px;
+			padding-left:1px;
+			padding-top:1px;
+			padding-bottom:1px;
+			border-radius:50%;
+			margin-left:6px;
+			font-size:13.5px;
+		}
+		header #header-wrap {
+			color:black;
+			width:100%;
+			height:35px;
+			box-sizing:border-box;
+			background:white;
+		}
+		header .user-back {
+			float:left;
+			display:flex;
+			position:relative;
+			line-height:35px;
+		}
+		.user-back #icon {
+			font-size:19px;
+			cursor:pointer;
+			padding:0 15px;
+			border-radius:50%;
+		}
+		.user-back #username {
+			font-family:Arial,sans-serif;
+			font-weight:bold;
+			margin-left:5px;
+		}
+		header #alih-profil {
+			float:right;
+			position:relative;
+			line-height:35px;
+			transform:translateX(95px);
+			color:#0065ff;
+			font-weight:580;
+			font-size:15px;
+			letter-spacing:0;
+		}
+		.container {
+			width:100%;
+			max-width:597px;
+			/*height:150vh; */
+			background:red;
+			box-sizing:border-box;
+			position:relative;
+			
+		}
+		.container #sampul {
+			width:100%;
+			height:80px;
+			border:1px solid;
+			position:absolute;
+		}
+		#sampul img {
+			width:100%;
+			background-size:cover;
+		}
+		#ganti-sampul {
+			position:relative;
+			width:30px;
+			height:30px;
+			color:orange;
+			transform:translate(543px, -150px);
+			border-radius:50%;
+			padding:25px;
+			box-sizing:border-box;
+			background:white;
+		}
+		#ganti-sampul span {
+			position:absolute;
+			width:30px;
+			height:30px;
+			padding:22px;
+			box-sizing:border-box;
+			background-color:rgba(128, 128, 128, 0.3);
+			border-radius:50%;
+			transform:translate(-22px, -22px);
+		}
+		#ganti-sampul span i {
+			position:absolute;
+			transform:translate(-16px, -12px);
+			font-size:25px;
+			color:black;
+		}
+		#profil {
+			position:absolute;
+			width:160px;
+			height:160px;
+			border:10px solid #fff;
+			transform:translate(20px, 150px);
+			border-radius:50%;
+			background:white;
+			padding:75px;
+		}
+		#prof-ut {
+			position:absolute;
+			width:165px;
+			height:165px;
+			background:rgba(128, 128, 128, 0.4);
+			transform:translate(-83px, -83px);
+			border-radius:50%;
+		}
+		#prof-ut img {
+			width:158px;
+			height:158px;
+			border-radius:50%;
+			transform:translate(3px, 4px);
+		}
+		#ganti-profil {
+			position:relative;
+			width:20px;
+			height:20px;
+			color:orange;
+			transform:translate(45px, 25px);
+			border-radius:50%;
+			padding:20px;
+			background:white;
+		}
+		#ganti-profil span {
+			position:absolute;
+			width:20px;
+			height:20px;
+			padding:18px;
+			background-color:rgba(128, 128, 128, 0.3);
+			border-radius:50%;
+			transform:translate(-18px, -18px);
+		}
+		#ganti-profil span i {
+			position:absolute;
+			transform:translate(-17px, -12px);
+			font-size:25px;
+			color:black;
+		}
+		#nama {
+			position:absolute;
+			top:335px;
+			left:20px;
+			font-weight:bold;
+			font-size:25px;
+		}
+		.content-container {
+			width:100%;
+			height:130vh;
+			position:absolute;
+			background:white;
+			top:250px;
+		}
+		#bio {
+			position:absolute;
+			transform:translate(22px, 375px);
+			font-size:17px;
+		}
+		.nvgs {
+			position:absolute;
+			top:410px;
+			width:100%;
+			height:40px;
+			line-height:40px;
+		}
+		.nvgs ul {
+			display:flex;
+			justify-content:space-between;
+			list-style-type:none;
+			box-sizing:border-box;
+			font-weight:bold;
+			letter-spacing:0;
+		}
+		.nvgs ul li {
+			margin-left:15px;
+			margin-right:15px;
+			padding:0 20px;
+			position:absolute;
+			border-radius:5px;
+			cursor:pointer;
+		}
+		.nvgs ul li:nth-child(1) {
+			padding:0 65px;
+			left:0;
+			background:#0065FF;
+			color:#FFF;
+		}
+		.nvgs ul li:nth-child(2) {
+			padding:0 63px;
+			transform:translateX(280px);
+			background:rgba(128, 128, 128, 0.3);
+		}
+		.nvgs ul li:nth-child(3) {
+			padding:0 15px;
+			right:0;
+			background:rgba(128, 128, 128, 0.3);
+		}
+		.nvgs ul li label {
+			letter-spacing:1px;
+			font-size:14px;
+			font-weight:900;
+		}
+		ul li span {
+			margin-right:10px;
+		}
+		#icon-tt {
+			position:absolute;
+			padding-left:16px;
+		}
+		.address {
+			position:absolute;
+			top:455px;
+			width:100%;
+			height:40px;
+			padding-left:15px;
+			line-height:40px;
+			font-family:'Roboto', sans-serif;
+			font-size:16px;
+			letter-spacing:1px;
+		}
+		.address ul li {
+			list-style:none;
+		}
+		.address button {
+			padding:5px;
+			font-size:17px;
+			border-radius:15px;
+			background:transparent;
+			letter-spacing:1px;
+			transform:translateY(15px);
+			border:1px solid;
+			border-color:rgba(128, 128, 128, 0.8);
+		}
+		.friends {
+			position:absolute;
+			top:630px;
+			width:100%;
+			height:40px;
+			line-height:40px;
+			padding:0 20px;
+			box-sizing:border-box;
+			display:flex;
+		}
+		.friends .teman label {
+			font-weight:900;
+		}
+		.friends .teman span {
+			float:left;
+			transform:translateY(-20px);
+			color:rgba(0, 0, 0, 0.5);
+		}
+		.friends #list-f {
+			transform:translateX(415px);
+			color:#0065ff;
+		}
+		.list-friend {
+			position:absolute;
+			width:100%;
+			height:200px;
+			display:flex;
+			justify-content:space-between;
+			box-sizing:border-box;
+			left:0;
+		}
+		.list-friend #friend {
+			width:170px;
+			height:135px;
+/*			height:110px;/*ukuran img*/
+			display:flex;
+			justify-content:space-between;
+			box-sizing:border-box;
+			border-radius:10px;
+			font-weight:900;
+			box-sizing:border-box;
+		}
+		.gambar {
+			width:170px;
+			height:105px;
+			box-sizing:border-box;
+			overflow:hidden;
+			border-radius:10px;
+		}
+		.gambar img {
+			width:100%;
+			height:auto;
+			position:relative;
+		}
+		#friend label {
+			transform:translateY(105px);
+			position:absolute;
+		}
+		.list-friend #friend:nth-child(1) {
+			transform:translate(20px, 55px);
+		}
+		.list-friend #friend:nth-child(2) {
+			transform:translate(0, 55px);
+		}
+		.list-friend #friend:nth-child(3) {
+			transform:translate(-15px, 55px);
+		}
+		
+		/* 2 */
+		
+		.list-friend2 {
+			position:absolute;
+			width:100%;
+			height:200px;
+			display:flex;
+			justify-content:space-between;
+			box-sizing:border-box;
+			left:0;
+			transform:translateY(155px);
+		}
+		.list-friend2 #friend2 {
+			width:170px;
+			height:135px;
+		/*			height:110px;/*ukuran img*/
+			display:flex;
+			justify-content:space-between;
+			box-sizing:border-box;
+			border-radius:10px;
+			font-weight:900;
+			box-sizing:border-box;
+		}
+		.gambar2 {
+			width:170px;
+			height:105px;
+			box-sizing:border-box;
+			overflow:hidden;
+			border-radius:10px;
+		}
+		.gambar2 img {
+			width:100%;
+			height:auto;
+			position:relative;
+		}
+		#friend2 label {
+			transform:translateY(105px);
+			position:absolute;
+		}
+		.list-friend2 #friend2:nth-child(1) {
+			transform:translate(20px, 55px);
+		}
+		.list-friend2 #friend2:nth-child(2) {
+			transform:translate(0, 55px);
+		}
+		.list-friend2 #friend2:nth-child(3) {
+			transform:translate(-15px, 55px);
+		}
+		
+		.fotoandavatar {
+			position:absolute;
+			top:84vh;
+			display:flex;
+			width:100%;
+			height:auto;
+			border:4px solid rgba(128, 128, 128, 0.5);
+			border-right:none;
+			border-left:none;
+			font-weight:900;
+		}
+		.foto, .avatar {
+			position:relative;
+			padding:10px 15px;
+			border-radius:20px;
+			left:15px;
+			margin:10px 5px;
+			background:rgba(218, 226, 232, 0.7);
+		}
+		.foto label, .avatar label {
+			margin-left:5px;
+		}
+		.container-posting {
+			width:100%;
+			height:120px;
+			border-bottom:4px solid rgba(128, 128, 128, 0.5);
+			position:absolute;
+			top:1067px;
+			box-sizing:border-box;
+		}
+		.container-posting h1 {
+			font-size:16px;
+			text-indent:15px;
+			position:relative;
+			letter-spacing:0.3px;
+		}
+		.posting {
+			position:absolute;
+			display:flex;
+		}
+		.p-l-profil {
+			width:45px;
+			height:45px;
+			position:absolute;
+			border-radius:50%;
+			overflow:hidden;
+			left:15px;
+			transform:translateY(10px);
+		}
+		.p-l-profil img {
+			width:45px;
+			height:45px;
+			position:absolute;
+		}
+		#input-posting {
+			width:450px;
+			height:50px;
+			position:absolute;
+			left:70px;
+			transform:translateY(13px);
+		}
+		#input-posting button {
+			width:460px;
+			height:40px;
+			border-radius:30px;
+			border:none;
+			background:rgba(218, 226, 232, 0.4);
+			font-size:16px;
+			font-weight:700;
+			color:rgba(0, 0, 0, 0.3);
+		}
+		#input-posting button p {
+			position:absolute;
+			transform:translate(15px, -8px);
+		}
+		.posting span {
+			position:absolute;
+			transform:translate(550px, 15px);
+			font-size:30px;
+		}
+		#icon-label {
+			position:absolute;
+			top:85px;
+			width:100%;
+			height:40px;
+			box-sizing:border-box;
+			font-size:13px;
+		}
+		#icon-label ul {
+			display:flex;
+			list-style:none;
+			justify-content:space-between;
+		}
+		#icon-label ul li label {
+			padding-left:10px;
+		}
+		.content-gambar {
+			position:absolute;
+			top:1190px;
+		}
+		#user-name {
+			display:flex;
+			width:100%;
+		}
+		#user-name label {
+			font-size:16px;
+			position:relative;
+			transform:translate(70px, 17px);
+		}
+		#ketandlogo {
+			position:relative;
+			transform:translate(70px, 11px);
+			color:rgba(0, 0, 0, 0.5);
+			font-size:14px;
+		}
+		#ketandlogo span, i {
+			margin-left:5px;
+		}
+		.btn-menu {
+			width:100%;
+		}
+		.btn-menu span {
+			position:absolute;
+			right:0;
+			transform:translate(380px, -25px);
+			font-size:20px;
+			cursor:pointer;
+			padding:5px 1px;
+		}
+		.unggah-profil {
+			position:absolute;
+			width:100%;
+			top:65px;
+			height:400px;
+		}
+		.unggah-profil img {
+			width:600px;
+			height:400px;
+		}
+		.nav-licoshare {
+			width:100%;
+			height:auto;
+			display:flex;
+			position:absolute;
+		}
+		.nav-licoshare .like, .comment, .share {
+			padding:10px 82px;
+			margin:3.8px;
+			border-radius:20px;
+			color:rgba(0, 0, 0, 0.8);
+			background:rgba(218, 226, 232, 0.5);
+			font-size:17px;
+			cursor:pointer;
+		}
+		.batas {
+			width:100%;
+			position:absolute;
+			top:1705px;
+			border-bottom:4px solid rgba(128, 128, 128, 0.5);
+		}
+		.ttl-profil {
+			width:45px;
+			height:45px;
+			position:absolute;
+			border-radius:50%;
+			overflow:hidden;
+			left:15px;
+			transform:translateY(10px);
+		}
+		.ttl-profil img {
+			width:45px;
+			height:45px;
+			position:absolute;
+		}
+		.content-ttl {
+			position:absolute;
+			top:1710px;
+		}
+		#user-name2 {
+			display:flex;
+			width:100%;
+		}
+		#user-name2 label {
+			font-size:16px;
+			position:relative;
+			transform:translate(70px, 17px);
+		}
+		#ketandlogo2 {
+			position:relative;
+			transform:translate(70px, 11px);
+			color:rgba(0, 0, 0, 0.5);
+			font-size:14px;
+		}
+		#ketandlogo2 span, i {
+			margin-left:5px;
+		}
+		.btn-menu2 {
+			width:100%;
+		}
+		.btn-menu2 span {
+			position:absolute;
+			right:0;
+			transform:translate(380px, -25px);
+			font-size:20px;
+			cursor:pointer;
+			padding:5px 1px;
+		}
+		.unggah-profil2 {
+			position:absolute;
+			width:100%;
+			top:65px;
+		}
+		.tanggal-lahir {
+			justify-content:center;
+			height:auto;
+		}
+		.icon-ultah {
+			position:absolute;
+			font-size:30px;
+			top:5px;
+			text-align:center;
+			transform:translateX(273px);
+			padding:13px;
+			border-radius:50%;
+			box-sizing:border-box;
+			color:#fff;
+			background:#0065ff;
+		}
+		.icon-ultah span i {
+			position:relative;
+			transform:translateX(-2px);
+		}
+		.tanggal-lahir b {
+			position:relative;
+			width:600px;
+			height:20px;
+			display:flex;
+			justify-content:center;
+			top:60px;
+			font-size:17px;
+			box-sizing:border-box;
+		}
+		.tanggal-lahir sub {
+			position:relative;
+			width:600px;
+			display:flex;
+			justify-content:center;
+			top:63px;
+			font-size:17px;
+			box-sizing:border-box;
+		}
+		.nav-licoshare2 {
+			width:100%;
+			height:auto;
+			display:flex;
+			position:absolute;
+			top:110px;
+		}
+		.nav-licoshare2 .like2, .comment2, .share2 {
+			padding:10px 82px;
+			margin:3.8px;
+			border-radius:20px;
+			color:rgba(0, 0, 0, 0.8);
+			background:rgba(218, 226, 232, 0.5);
+			font-size:17px;
+			cursor:pointer;
+		}
+		.batas2 {
+			width:100%;
+			position:absolute;
+			top:1930px;
+			border-bottom:4px solid rgba(128, 128, 128, 0.5);
+		}
+		.brdr1 {
+			width:100%;
+			border:1.5px solid rgba(218, 226, 232, 0.5);
+		}
+		.brdr2 {
+			position:relative;
+			width:100%;
+			border:1.5px solid enga(218, 226, 232, 0.5);
+		}
+		</style>
+	</head>
+	<body>
+	
+	<!--BAGIAN HEADER-->
+	
+		<header>
+			<div id="header-data" >
+				<p>Mode data<span><i class="fa-regular fa-question"></i></span></p>
+				<button id="alih-mode" onclick="alihMode()" >Beralih Mode</button>
+			</div>
+			<div id="header-wrap" >
+				<div class="user-back" >
+					<div id="icon" ><i class="fa-solid fa-arrow-left"></i></div>
+					<div id="username" >ABCDEFG</div>
+				</div>
+				<span id="alih-profil" >Beralih Profil</span>
+			</div>
+		</header>
+		
+	<!--MAIN CONTENT-->
+	
+	<main>
+		<div class="container" >
+			<div id="sampul" >
+				<img src="img/sampul.jpg" >
+				<div id="ganti-sampul" >
+					<span><i class="fa-solid fa-camera"></i></span>
+				</div>
+			</div>
+			<div class="content-container" >
+			</div>
+				<div id="profil" >
+					<div id="prof-ut" >
+						<img src="img/profil.jpeg" >
+					</div>
+					<div id="ganti-profil" >
+						<span><i class="fa-solid fa-camera"></i></span>
+					</div>
+				</div>
+				<div>
+				<div id="nama" >
+					<label>ABCDEFG</label>	
+				</div>
+				<div id="bio" >
+					<label><span>Hallo, Selamat dadang</span></label>
+				</div>
+				<div class="nvgs" >
+					<ul>
+						<li id="icon-tkc" >
+							<span id="tkc" ><i class="fa-regular fa-plus"></i></span>
+							<label>Tambah ke cerita</label>
+						</li>
+						<li id="icon-ep" >
+							<span id="ep" ><i class="fa-solid fa-pen"></i></span>
+							<label>Edit profil</label>
+						</li>
+						<li id="icon-tt" >
+							<span id="titik-tiga" ><i class="fa-solid fa-ellipsis"></i></span>
+						</li>
+					</ul>
+				</div>
+				
+				<!--ADDRESS PROFIL -->
+				
+				<div class="address" >
+					<ul>
+						<li>
+							<span style="color:gray;" ><i class="fa-solid fa-house-chimney"></i></span>
+							<label>Tinggal di <b>Kabupaten Cianjur</b></label>
+						</li>
+						<li>
+							<span style="color:gray;" ><i class="fa-solid fa-wifi" style="position:relative;transform:rotate(45deg) translate(0, 3px)" ></i></span>
+							<label>Diikuti oleh <b>83 Orang</b></label>
+						</li>
+						<li style="position:relative;transform:translateX(3px);" >
+							<span style="background:gray;border-radius:50%;padding:0 2px;color:white;position:relative;transform:translateX(10px);" ><i class="fa-solid fa-ellipsis" style="position:relative;transform:translateX(-2px)" ></i></span>
+							<label>Lihat selengkapnya tentang diri Anda</label>
+						</li>
+					</ul>
+					<button>Game VR/AR</button>
+				</div>
+				
+				<!-- LIST FRIENDS FACEBOOK -->
+				
+				<div class="friends" >
+					<div class="teman" >
+						<label>Teman</label><br>
+						<span>496 teman</span>
+					</div>
+					<div id="list-f" >
+						<label>Lihat Semua</label>
+					</div>
+					
+					
+					<div class="list-friend" >
+					<!--list friend-->	
+						<div id="friend" >
+							<div class="gambar" >
+								<img src="img/Albert_Einstein.jpg" style="transform:translateY(-47px);" >
+							</div><br>
+							<label>Albert Einstein</label>
+						</div>
+						<div id="friend" >
+							<div class="gambar" >
+								<img src="img/Barack_Hussein_Obama.jpg" style="transform:translateY(-45px);" >
+							</div><br>
+							<label>Barack Hussein Obama</label>
+						</div>
+						<div id="friend" >
+							<div class="gambar" >
+								<img src="img/Mark_Elliot_Zuckerberg.jpg" style="transform:translateY(-5px);" >
+							</div><br>
+							<label>Mark Elliot Zuckerberg</label>
+						</div>
+					</div>
+					<div class="list-friend2" >
+					<!--list friend-->	
+						<div id="friend2" >
+							<div class="gambar2" >
+								<img src="img/Recep_Tayyip_Erdogan.jpg" style="transform:translateY(-20px);" >
+							</div><br>
+							<label>Recep Tayyip Erdogan</label>
+						</div>
+						<div id="friend2" >
+							<div class="gambar2" >
+								<img src="img/Salman_bin_Abdulaziz_Al_Saud.jpg" style="transform:translateY(-10px);" >
+							</div><br>
+							<label style="width:140px;height:35px;overflow:hidden" >Salman bin Abdulaziz Al Saud</label>
+						</div>
+						<div id="friend2" >
+							<div class="gambar2" >
+								<img src="img/Sir_Timothy_John.jpg" style="transform:translate(0, -105px);" >
+							</div><br>
+							<label>Sir Timothy John</label>
+						</div>
+					</div>
+				</div>
+				
+				<!-- FOTO & AVATAR -->
+				<div class="fotoandavatar" >
+					<div class="foto" >
+						<span><i class="fa-regular fa-images"></i></span>
+						<label>Foto</label>
+					</div>
+					<div class="avatar" >
+						<span><i class="fa-solid fa-user-ninja"></i></span>
+						<label>Avatar</label>
+					</div>
+				</div>
+				<!-- POSTING -->
+				<div class="container-posting" >
+					<h1>Postingan</h1>
+					<div class="posting" >
+						<div class="p-l-profil" >
+							<img src="img/profil.jpeg" >
+						</div>
+						<div id="input-posting" >
+							<button id="update-posting" ><p>Posting pembaruan status</p></button>
+						</div>
+						<span><i class="fa-regular fa-images"></i></span>
+					</div>
+					<div id="icon-label" >
+						<ul>
+							<li style="position:relative;transform:translateX(80px)" ><i class="fa-regular fa-images" style="color:#00ff00;" ></i><label>Foto</label></li>
+							<label style="position:absolute;transform:translate(200px, -13px);font-size:30px;color:rgba(218, 226, 232, 1);" >|</label>
+							<li style="position:relative;transform:translateX(35px)" ><i class="fa-sharp fa-solid fa-location-dot" style="color:#ff0000;" ></i><label>Singgah</label></li>
+							<label style="position:absolute;transform:translate(400px, -13px);font-size:30px;color:rgba(218, 226, 232, 1);" >|</label>
+							<li style="position:relative;transform:translateX(-40px)" ><i class="fa-solid fa-flag" style="color:#9600db;" ></i><label>Peristiwa Penting</label></li>
+						</ul>
+					</div>
+				</div>
+				
+				<div class="content-gambar" >
+					<div class="p-l-profil" >
+						<img src="img/profil.jpeg" >
+					</div>
+					<div id="user-name" >
+						<label><b>R</b> memperbarui foto profilnya.</label>
+					</div>
+					<div id="ketandlogo" >
+						<sub>4 Apr 2023 <i>•</i> <span><i class="fa-solid fa-earth-asia"></i></span></sub>
+					</div>
+					<menu class="btn-menu" >
+						<span><i class="fa-solid fa-ellipsis" ></i></span>
+					</menu>
+					
+					<!-- UNGGAH PROFIL -->
+					<div class="unggah-profil" >
+						<div class="up-image" >
+							<img src="img/profil.jpeg" >
+						</div>
+						<div class="nav-licoshare" >
+							<div class="like" >
+								<span><i class="fa-regular fa-thumbs-up"></i></span>
+							</div>
+							<div class="comment" >
+								<span><i class="fa-regular fa-message"></i></span>
+							</div>
+							<div class="share" >
+								<span><i class="fa-sharp fa-solid fa-share" ></i></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+				<div class="batas" >
+				</div>
+				<!-- #2 -->
+				
+				<div class="content-ttl" >
+					<div class="ttl-profil" >
+						<img src="img/profil.jpeg" >
+					</div>
+					<div id="user-name2" >
+						<label><b>R</b></label>
+					</div>
+					<div id="ketandlogo2" >
+						<sub>11 Jul 2002 <i>•</i> <span><i class="fa-solid fa-users"></i></span></sub>
+					</div>
+					<menu class="btn-menu2" >
+						<span><i class="fa-solid fa-ellipsis" ></i></span>
+					</menu>
+					
+					<!-- UNGGAH PROFIL -->
+					<div class="unggah-profil2" >
+						<div class="brdr1" ></div>
+						<div class="tanggal-lahir" >
+							<div class="icon-ultah" >
+								<span><i class="fa-solid fa-cake-candles"></i></span>
+							</div>
+							<b><p>Lahir pada tanggal 11 Juli 2002</p></b>
+							<sub>11 JULI 2002</sub>
+						</div>
+						<div class="brdr2" ></div>
+						<div class="nav-licoshare2" >
+							<div class="like2" >
+								<span><i class="fa-regular fa-thumbs-up"></i></span>
+							</div>
+							<div class="comment2" >
+								<span><i class="fa-regular fa-message"></i></span>
+							</div>
+							<div class="share2" >
+								<span><i class="fa-sharp fa-solid fa-share" ></i></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="batas2" ></div>
+				
+			</div>
+		</div>
+	</main>
+	</body>
+</html>
